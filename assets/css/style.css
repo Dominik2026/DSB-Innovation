@@ -524,8 +524,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* ===== Testimonials ===== */
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
+  align-items: stretch;
 }
 .testimonial-card {
   background: var(--color-bg);
@@ -534,25 +535,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-.testimonial-quote {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--color-dark);
-}
-.testimonial-quote::before {
-  content: '\201C';
-  color: var(--color-primary);
-  font-family: var(--font-display);
-  margin-right: 2px;
-}
-.testimonial-quote::after {
-  content: '\201D';
-  color: var(--color-primary);
-  font-family: var(--font-display);
-  margin-left: 2px;
+  height: 100%;
 }
 .testimonial-author {
   display: flex;
@@ -560,10 +543,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   gap: 14px;
 }
 .testimonial-avatar {
-  width: 56px;
-  height: 56px;
+  width: 67px;
+  height: 67px;
   flex-shrink: 0;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   border: 1.5px solid #D8E0EA;
   background: var(--color-white);
@@ -578,9 +561,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size: 0.95rem;
   color: var(--color-dark);
 }
-.testimonial-author-info .role {
+.testimonial-author-info .position {
   font-size: 0.85rem;
   color: var(--color-neutral);
+}
+.testimonial-author-info .company {
+  font-size: 0.85rem;
+  color: var(--color-neutral);
+}
+.testimonial-quote {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-dark);
+  flex-grow: 1;
 }
 
 @media (max-width: 860px) {
